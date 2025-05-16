@@ -35,9 +35,20 @@ mv -v ./floorp ./AppDir && (
 	exec "${CURRENTDIR}/floorp" "$@"
 	KEK
 	chmod +x ./AppRun
+
+	# disable automatic updates
+	mkdir -p ./distribution
+	cat >> ./distribution/policies.json <<- 'KEK'
+	{
+	  "policies": {
+	    "DisableAppUpdate": true,
+	    "AppAutoUpdate": false,
+	    "BackgroundAppUpdate": false
+	  }
+	}
+	KEK
 )
 
 wget "$APPIMAGETOOL" -O ./appimagetool
 chmod +x ./appimagetool
 ./appimagetool -n -u "$UPINFO" ./AppDir
-
