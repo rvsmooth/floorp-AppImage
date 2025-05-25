@@ -56,9 +56,23 @@ mv -v ./floorp ./AppDir && (
 	  "policies": {
 	    "DisableAppUpdate": true,
 	    "AppAutoUpdate": false,
-	    "BackgroundAppUpdate": false
-	  }
-	}
+	    "BackgroundAppUpdate": false,
+	    "DisablePocket": true,
+	    "DisableTelemetry": true,
+	    "FirefoxSuggest": {
+		    "WebSuggestions": false,
+		    "SponsoredSuggestions": false,
+		    "ImproveSuggest": false
+	    },
+		"FirefoxHome": {
+			"TopSites": false,
+			"SponsoredTopSites": false,
+			"Highlights": false,
+			"Pocket": false,
+			"SponsoredPocket": false
+	   }
+          }
+	 }
 	KEK
 )
 
